@@ -17,6 +17,13 @@
 	<jsp:include page="menu.jsp" />
 	<div class="login">
 	
+	<%
+		String uname = request.getAttribute("username").toString();
+		String validUname = null;
+		out.print("welcome "+uname);  
+		if(uname != null) {
+			validUname = uname;
+	%>
 		 UserName :
 		&nbsp; &nbsp; <%=ESAPI.encoder().encodeForHTML(request.getAttribute("username").toString())%>
 
